@@ -1,0 +1,111 @@
+environment Node JS :
+- node js, Vscode, DBMS (Laragon), Postman
+
+setting Laragon : 
+- download laragon 
+ install laragon
+ - download binaries postgresSql
+
+ setting ekstension di laragon : 
+ - setting Laragon port 
+    - menu advanced > port > change port 5432 to 5433
+    setting lib php
+    - pdo_pgsql
+    - pgsql
+
+setting DBMS postgresSqldatabase ? create database > name : web api
+
+setting VsCode Exstension
+ - prettier
+ - Auto Close Tag 
+ - Auto rename tag 
+ - Auto Complete Tag
+ - Bootstrap 5 Quick Snippets
+ - ChatGPT optional
+ - Color Highlight
+ - Css Peek
+ - Dot ENV
+ - Ejs beautify
+ - Ejs language support
+ - ejs Snippets
+ - ejs snippets and color highlithing
+ - es7+ react redux
+ - ESlint 
+ - IntelliSense for CSS class names in HTML
+ - path intellisense
+ - Thunder Client ( API testing)
+ - vscode icons
+
+ setting Prettier 
+ - ctrl + , (setting)
+ - search "formatter" enable prettier , dan on save nya diceklis
+
+ cara install express :
+ npm init
+ npm i express 
+ atau    yarn add express
+
+cara jalankan express node js :
+node app.js
+atau pakai  npm start
+nodemon app
+npm run dev
+
+cara install nodemon secara global:
+npm i -g nodemon
+
+morgan adalah tools untuk menampilkan log request : 
+npm i morgan
+npm i dotenv
+
+
+cara instal template engine ejs:
+npm i ejs
+cara install express-ejs-layouts: 
+npm i express-ejs-layouts
+
+dependency untuk pembuatan API : 
+npm i body-parser cors compression 
+
+cara koneksi database menggunakan squelize :
+$ npm i squelize pg pg-hstore mysql2
+
+cara install sequelize - cli (migration):
+npm i sequelize-cli
+
+
+cara setting local = 
+buat file .sequelizerc
+// .sequelizerc
+
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('config', 'database.json'),
+  'models-path': path.resolve('db', 'models'),
+  'seeders-path': path.resolve('db', 'seeders'),
+  'migrations-path': path.resolve('db', 'migrations')
+};
+
+cara setting sequelize-cli:
+npx sequelize-cli init (u luar/ tdk di eksekusi)
+npm run sequelize-cli init (pakai ini untuk local)
+
+cara menggunakan migrations sequelize-cli:
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string (pakai luar)
+
+npm run sequelize-cli -- model:generate --name Contact --attributes name:string,email:string,phone:string,image:string --underscored
+
+running migration: 
+npx sequelize-cli db:migrate (luar )
+
+local:
+npm run sequelize-cli -- db:migrate  ini u migrate
+npm run sequelize-cli -- db:migrate:undo
+npm run sequelize-cli -- db:migrate:undo:all
+
+validasi dan upload image:
+npm i express-validator multer
+
+form data untuk node js:
+npm i method-override cookie-parser express-session
