@@ -6,9 +6,19 @@ const router = express.Router();
 
 //dari controller
 router.get("/", contactApiController.index);
-router.post("/", contactValidator, contactApiController.store);
+router.post(
+  "/",
+  upload.single("image"),
+  contactValidator,
+  contactApiController.store
+);
 router.get("/:id", contactApiController.show);
-router.put("/:id", contactValidator, contactApiController.update);
+router.put(
+  "/:id",
+  upload.single("image"),
+  contactValidator,
+  contactApiController.update
+);
 router.put("/:id", contactValidator, contactApiController.update);
 router.delete("/:id", contactApiController.destroy);
 
@@ -25,7 +35,7 @@ router.post("/upload", upload.single("image"), (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: "Upload failed",
+      message: "Upload Gagal",
       data: {
         error: error.message,
       },
